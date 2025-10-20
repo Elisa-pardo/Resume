@@ -1,0 +1,102 @@
+body { margin: 0; font-family: Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+#main-content { flex: 1; }
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 14px 16px;
+  background-color: rgb(249, 234, 255); /* background */
+  color: rgb(22, 1, 21);  /* text */
+}
+
+/* Main */
+main {
+  padding: 24px 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: rgb(22, 1, 21);  /* text */
+}
+
+.bold { font-weight: bold; }
+
+/* Footer  */
+.site-footer {
+  padding: 16px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* NAV */
+.nav-class {
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  background: rgb(22, 1, 21);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.nav-class li { margin: 0; padding: 0; }
+.nav-class a {
+  display: inline-block;
+  color: rgb(189, 148, 212);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background .2s, color .2s;
+}
+.nav-class a:hover {
+  background: rgb(22, 1, 21);
+  color: rgb(249, 234, 255);
+}
+
+/* current page */
+.nav-class a[aria-current="page"] {
+  background: rgb(169, 145, 182);
+  color: rgb(22, 1, 21);
+}
+
+hr { border: none; height: 2px; background: rgba(157, 93, 194, 0.35); margin: 8px 0 16px; }
+
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(187, 137, 199, 0.795);
+}
+
+th, td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgb(206, 168, 202);
+  background-color: rgb(249, 241, 255); 
+  color: rgb(22, 1, 21);
+  text-align: left;
+}
+
+th {
+  background-color: rgb(169, 145, 182);
+  color: rgb(22, 1, 21);
+  font-weight: bold;
+}
+
+tr:hover td {
+  background: rgba(222, 190, 240, 0.39); 
+  color: rgb(22, 1, 21);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* CAPTION HIDDEN */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
