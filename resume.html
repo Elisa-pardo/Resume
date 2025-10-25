@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume</title>
-  <link rel="stylesheet" href="css/styles.css?=6">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="Images/faviconEP.png">
 </head>
 <body>
 
@@ -29,6 +30,16 @@
   <main id="main-content">
 
     <section id="summary">
+
+      <div id="current-date"></div>
+      <script>
+        const dateDiv = document.getElementById("current-date"); 
+        const today = new Date(); 
+        dateDiv.textContent = today.toDateString(); 
+      
+        console.log("Thanks for watching my Resume ✨");
+      </script>
+
       <h3>Summary</h3>
       <hr> <!-- Horizontal Rule -->
       <p><span class="bold">Enthusiastic Junior QA Tester</span></p>
@@ -57,11 +68,11 @@
       <h3>Skills</h3>
       <hr> <!-- Horizontal Rule -->
       <ul>
-        <li>Testing & QA Tools: JIRA (bug tracking)</li>
-        <li>Programming Basics: Python, C++ (basics), Javascript (basics)</li>
-        <li>Methodologies: Agile, Scrum</li>
-        <li>Version Control: GitLab, GitHub</li>
-        <li>Web Development: HTML, CSS, Javascript</li>
+        <li>Testing & QA Tools:<em> JIRA (bug tracking)</em></li>
+        <li>Programming Basics:<em> Python, C++ (basics), Javascript (basics)</em></li>
+        <li>Methodologies:<em> Agile, Scrum</em></li>
+        <li>Version Control:<em> GitLab, GitHub</em></li>
+        <li>Web Development:<em> HTML, CSS, Javascript</em></li>
       </ul>
     </section>
 
@@ -69,8 +80,8 @@
       <h3>Languages</h3>
       <hr> <!-- Horizontal Rule -->
       <ul>
-        <li>English - Proficient</li>
-        <li>Spanish - Native</li>
+        <li><strong>English</strong> - Proficient</li>
+        <li><strong>Spanish</strong> - Native</li>
       </ul>
     </section>
 
@@ -86,12 +97,12 @@
       </ul>
     </article>
   </section>
-
+  
     <!-- EDUCATION & CERTIFICATES -->
     <section id="education">
       <h3 id="edu-title">Education & Certificates</h3>
       <hr> <!-- Horizontal Rule -->
-      <div class="table-wrap">
+      <div class="table-cert">
         <table class="edu-table" aria-labelledby="edu-title">
           <caption class="sr-only">Education & Certifications</caption>
           <thead>
@@ -109,13 +120,13 @@
               <td>2024</td>
               <td>In Progress</td>
             </tr>
-            <tr>
+            <tr class="row-link" data-href="Images/certificate_foundations.png">
               <td>University of Leeds</td>
               <td>Foundations of Software Testing and Validation</td>
               <td>2025</td>
               <td>Completed</td>
             </tr>
-            <tr>
+            <tr class="row-link" data-href="Images/certificate_google_it.png">
               <td>Google</td>
               <td>Google IT Support</td>
               <td>2024</td>
@@ -135,6 +146,29 @@
     <small>© 2025 Elisa Pardo Cuff</small>
   </footer>
   <!-- END FOOTER -->
+
+  <script>
+    document.addEventListener('click', (e) => {
+      const tr = e.target.closest('tr.row-link');
+      if (!tr) return;
+      const url = tr.dataset.href;
+      if (url) window.open(url, '_blank', 'noopener');
+    });
+
+  document.querySelectorAll('tr.row-link').forEach((tr) => {
+    tr.style.cursor = 'pointer';
+    tr.tabIndex = 0;
+    tr.setAttribute('role', 'link');
+    tr.setAttribute('aria-label', 'Open image');
+    tr.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const url = tr.dataset.href;
+        if (url) window.open(url, '_blank', 'noopener');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

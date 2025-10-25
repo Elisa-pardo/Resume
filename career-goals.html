@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>cover-letter</title>
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="Images/faviconEP.png">
+  <audio id="click-sound" src="Media/song_of_storms_botw.mp3" preload="auto"></audio>
+  
 </head>
 <body>
 
@@ -13,7 +16,6 @@
     <h2>ELISA PARDO CUFF</h2>
     <p>Software Engineer Student</p>
   </header>
-  <!-- END HEADER -->
 
   <!-- NAV -->
   <nav>
@@ -23,19 +25,30 @@
       <li><a href="career-goals.html" aria-current="page">Career Goals</a></li>
     </ul>
   </nav>
-  <!-- END NAV -->
 
   <!-- MAIN -->
   <main id="career-goals">
+
+  <!-- VIDEO -->
+<section class="camping-center">
+  <video class="camping-video" autoplay muted loop playsinline preload="metadata">
+    <source src="Media/camping_botw.mp4" type="video/mp4">
+  </video>
+
+  <!-- DATE widget style -->
+  <div class="date-widget" aria-hidden="true">
+    <span class="month">MMM</span>
+    <span class="day">00</span>
+  </div>
+</section>
+
     <h3>Career Goals</h3>
     <hr> <!-- Horizontal Rule -->
-    <section id="career-goals">
-      <p>
-        My goal is to build a strong career in Software Quality Assurance, focusing on testing,
+    <section id="career-goals-section">
+      <p>My goal is to build a strong career in Software Quality Assurance, focusing on testing,
         automation, and continuous improvement of software products. I aim to join a dynamic team
         where I can apply my analytical mindset, attention to detail, and technical skills to
-        ensure high-quality user experiences while continuing to grow as a QA professional.
-      </p>
+        ensure high-quality user experiences while continuing to grow as a QA professional.</p>
     </section>
 
     <article id="certifications">
@@ -50,6 +63,99 @@
       <img src="images/certificate_google_it.png" alt="Google IT Certificate" width="300">
     </div>
     </article>
+    <br><hr>
+
+    <section>
+      <!-- Forms -->
+      <h3>Contact Me</h3> 
+      <form action="https://wp.zybooks.com/form-viewer.php" method="post">
+        <div class="form-container">
+          <!--left side-->
+          <div class="form-columnLeft">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName">
+            <label for="lasttName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName">
+            <label for="companyName">Company Name:</label>
+            <input type="text" name="companyName" id="companyName">
+            <label for="myEmail">Email Address:</label>
+            <input type="email" name="myEmail" id="myEmail">
+            <label for="myPW">Password:</label>
+            <input type="password" name="myPW" id="myPW">
+
+            <fieldset>
+              <legend>Best Contact Time</legend>
+              <input type="radio" name="contactTime" id="contactTimeAny" value="any" checked><label for="contactTimeAny">Anytime</label><br>
+              <input type="radio" name="contactTime" id="contactTimeAM" value="am"><label for="contactTimeAM">AM</label><br>
+              <input type="radio" name="contactTime" id="contactTimePM" value="pm"><label for="contactTimePM">PM</label><br>
+              <input type="radio" name="contactTime" id="contactTimeSpecific" value="specific"><label for="contactTimeSpecific">Specific Time</label>
+              <input type="time" name="myContactTime" id="myContactTime">
+            </fieldset>
+
+          </div>
+          <!--right side-->
+            <div class="form-columnRight">
+              <fieldset>
+                <legend><br><br>Best Contact Option</legend>
+                <input type="checkbox" name="demoCheckbox" id="demoCB1" value="1"><label for="demoCB1">Phone</label>
+                <input type="checkbox" name="demoCheckbox" id="demoCB2" value="2"><label for="demoCB2">Email</label>
+                <input type="checkbox" name="demoCheckbox" id="demoCB3" value="3"><label for="demoCB3">Text</label>
+              </fieldset>
+              <select name="mySelect" id="mySelect" multiple>
+                <option value="1">test</option>
+                <option value="2">Lorem, ipsum dolor.</option>
+                <option value="3">Officiis, delectus numquam.</option>
+                <option value="4">Magnam, sit ducimus.</option>
+                <option value="5">Vero, reiciendis sit!</option>
+                <option value="6">Culpa, fugiat maxime.</option>
+                <option value="7">Nesciunt, autem eaque.</option>
+                <option value="8">Voluptatem, sapiente reprehenderit.</option>
+              </select>
+              <label for="myTA">Message:</label>
+              <textarea name="myTA" id="myTA" cols="20" rows="4"></textarea>
+              <label for="myFile">Attach a file:</label>
+              <input type="file" name="myFile" id="myFile">
+
+            </div>
+        </div>
+        <div class="form-buttons">
+          <input type="reset" name="resetBtn" id="resetBtn" value="Reset Form">
+          <input type="submit" name="submitBtn" id="submitBtn" value="Submit Form">
+
+        </div>
+      </form>
+
+  <script>
+    const base = document.getElementById('click-sound');
+    if (base) {
+      base.volume = 0.3;
+      document.addEventListener('pointerdown', () => {
+        try { base.currentTime = 0; base.play(); } catch {}
+      });
+    }
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const LOCALE = 'en-US'; 
+  function updateDateWidget() {
+    const widget = document.querySelector('.camping-center .date-widget');
+    if (!widget) return;
+    const m = widget.querySelector('.month');
+    const d = widget.querySelector('.day');
+    const now = new Date();
+    m.textContent = now.toLocaleString(LOCALE, { month: 'short' }).toUpperCase();
+    d.textContent = String(now.getDate()).padStart(2, '0');
+  }
+  updateDateWidget();
+  
+  (function scheduleMidnightUpdate(){
+    const now = new Date(), next = new Date(now);
+    next.setHours(24,0,0,0);
+    setTimeout(() => { updateDateWidget(); scheduleMidnightUpdate(); }, next - now);
+  })();
+});
+</script>
+
+    </section>
 
   </main>
   <!-- END MAIN -->

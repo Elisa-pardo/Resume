@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>cover-letter</title>
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="Images/faviconEP.png">
 </head>
 <body>
 
@@ -32,24 +33,31 @@
       <p><span class="bold">Elisa Pardo Cuff</span></p>
       <p>Brooklyn, NY<br>
       (619) 8182-2113<br>
-      <a href="mailto:epardoc@wgu.edu">epardoc@wgu.edu</a><br>
-      <a href="https://www.linkedin.com/in/elisa-pardo" target="_blank">linkedin.com/in/elisa-pardo</a></p>
+      <a href="mailto:epardoc@wgu.edu"><mark>epardoc@wgu.edu</mark></a><br>
+      <a href="https://www.linkedin.com/in/elisa-pardo" target="_blank"><mark>linkedin.com/in/elisa-pardo</mark></a></p>
       <hr><br> <!-- Horizontal Rule -->
     </article>
     <section id="letter">
-      <p>Dear Hiring Team,</p>
-      <p>I am truly grateful for the opportunity to apply for the QA Analyst Intern 
+      <div id="current-date"></div>
+      <script>
+        const dateDiv = document.getElementById("current-date"); 
+        const today = new Date(); 
+        dateDiv.textContent = today.toDateString(); 
+      </script>
+
+      <br><p>Dear Hiring Team,</p>
+      <p>I am truly grateful for the opportunity to apply for the <em>QA Analyst Intern</em> 
       position. As a Software Engineering student with a deep 
       curiosity for how things work, I am eager to keep learning while contributing 
       to a team that values quality and collaboration.</p>
-      <p>Through my studies, I've built a foundation in software development 
-      processes and testing concepts, and I've recently begun practicing with tools 
-      like JIRA to better understand bug tracking and reporting. While I am still at 
-      the beginning of my professional journey, I am passionate about quality 
+      <p>Through my studies, I've built a foundation in <mark>software development 
+      processes and testing concepts,</mark> and I've recently begun practicing with tools 
+      like <mark>JIRA</mark> to better understand bug tracking and reporting. While I am still at 
+      the beginning of my professional journey, I am passionate about <mark>quality 
       assurance and problem-solving, and I am ready to put my dedication and 
-      willingness to grow into real-world projects.</p>
-      <p>What excites me most about this internship is the chance to gain hands-on 
-      experience while learning from a talented team. I believe that even as an 
+      willingness to grow into real-world projects.</mark></p>
+      <p>What excites me most about this internship is <em>the chance to gain hands-on 
+      experience while learning from a talented team.</em> I believe that even as an 
       intern, I can bring value through hard work, attention to detail, and a fresh 
       perspective, while gaining the guidance I need to become a strong QA 
       professional.</p>
